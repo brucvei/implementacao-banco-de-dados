@@ -5,7 +5,7 @@
  */
 package ibd.table;
 
-import ibd.table.management.HeapTable1;
+import ibd.table.management.HeapTable;
 import java.util.Hashtable;
 
 /**
@@ -25,7 +25,7 @@ public class Directory {
         }
         //t = new OrderedTable2(folder, name, pageSize, override);
         //t = new HalfFullOrderedTable(folder, name, pageSize, override);
-        t = new HeapTable1(folder, name, pageSize, override);
+        t = new HeapTable(folder, name, pageSize, override);
         t.key = key;
         tables2.put(key, t);
         return t;

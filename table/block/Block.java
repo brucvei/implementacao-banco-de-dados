@@ -9,7 +9,6 @@ import ibd.table.record.CreatedRecord;
 import ibd.table.record.LoadedRecord;
 import ibd.table.Params;
 import ibd.table.record.Record;
-import ibd.table.old.Block3;
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
@@ -203,7 +202,7 @@ public class Block extends PersistentBlock implements Iterable {
     private void loadRecord(int index, DataInput in) throws IOException {
         //private void loadRecord(int index, byte[] bytes) throws IOException {
 
-        offset = (int) (Block3.HEADER_LEN + Record.RECORD_SIZE * index);
+        //offset = (int) (Block3.HEADER_LEN + Record.RECORD_SIZE * index);
 
         Long primaryKey = in.readLong();//readLong(bytes); 
         String content = in.readUTF();//readUTF8(bytes); 
