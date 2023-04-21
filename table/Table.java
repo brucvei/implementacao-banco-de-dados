@@ -5,6 +5,7 @@
  */
 package ibd.table;
 
+import ibd.table.management.HeapTableBruna;
 import ibd.table.record.Record;
 import ibd.table.record.CreatedRecord;
 import ibd.table.block.Block;
@@ -308,6 +309,9 @@ public abstract class Table implements Iterable {
     if (index_rec == null) {
       return null;
     }
+
+    // aqui deve ser feita a atualização da lista heap, se necessário
+
 
     Block block = getBlock(index_rec.getBlockId());
     Record record = (Record) block.getRecord(index_rec.getPrimaryKey());

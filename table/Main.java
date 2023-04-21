@@ -5,6 +5,7 @@
  */
 package ibd.table;
 
+import ibd.table.management.HeapTableBruna;
 import ibd.table.record.Record;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -176,7 +177,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             Main m = new Main();
-            Table table = Directory.getTable("c:\\teste\\ibd", "newTable", 4096, true);
+            Table table = Directory.getTable("C:\\Users\\bruna\\IdeaProjects\\ibd", "table.ibd", 4096, true);
 
             //m.testInsertion(table,51);
             //m.testInsertion(table,22);
@@ -186,7 +187,7 @@ public class Main {
             //m.testRemoval(table,15);
             //m.testUpdate(table,15L);
             //m.testSearch(table, 15);
-//            
+//
 //            
             m.testMultipleInsertions(table, 0, 1000, true, false, 400);
             m.testMultipleRemotions(table, 0, 1000, true, false);
