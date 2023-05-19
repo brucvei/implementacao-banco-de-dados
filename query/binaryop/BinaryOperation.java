@@ -42,7 +42,7 @@ public abstract class BinaryOperation extends Operation {
         findSourceIndex();
     }
 
-    private void findSourceIndex() throws Exception {
+    void findSourceIndex() throws Exception {
         if (sourceName1 == null) {
             tupleIndex1 = 0;
         } else {

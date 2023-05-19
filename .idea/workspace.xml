@@ -6,23 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="df1c5dc5-851f-4c8b-95a2-99c05ea92083" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/bruna.dat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/bruna.idx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/query/binaryop/BrunaDifference.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/query/binaryop/BrunaDifference.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table.ibd.dat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table.ibd.idx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table/Directory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/table/Directory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/table/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table/Table$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/table/Table$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/table/Table.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/table/Utils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table/block/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/table/block/Block.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table/management/HeapTableBruna.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/table/management/HeapTableBruna.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table/record/Record.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/table/record/Record.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/query/binaryop/BinaryOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/query/binaryop/BinaryOperation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/query/binaryop/BrunaDifference.java" beforeDir="false" afterPath="$PROJECT_DIR$/query/binaryop/BrunaDifference.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/table/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/table/Main.java" afterDir="false" />
@@ -48,21 +41,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/bruna/Documents/todo.txt",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/bruna/Documents/todo.txt&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ibd.table.Main" />
@@ -88,5 +81,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

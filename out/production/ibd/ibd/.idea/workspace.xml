@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df1c5dc5-851f-4c8b-95a2-99c05ea92083" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/query/binaryop/BinaryOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/query/binaryop/BinaryOperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/query/binaryop/BrunaDifference.java" beforeDir="false" afterPath="$PROJECT_DIR$/query/binaryop/BrunaDifference.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/table/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/table/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +36,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/bruna/IdeaProjects/ibd&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/bruna/Documents/todo.txt&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -43,6 +45,15 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ibd.table.Main" />
+      <module name="ibd" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -53,11 +64,22 @@
       <updated>1684456949609</updated>
       <workItem from="1684456951335" duration="7000" />
       <workItem from="1684456988329" duration="2505000" />
-      <workItem from="1684495311490" duration="523000" />
+      <workItem from="1684495311490" duration="8437000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
