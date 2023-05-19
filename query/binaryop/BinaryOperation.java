@@ -32,8 +32,8 @@ public abstract class BinaryOperation extends Operation {
         this.sourceName2 = sourceName2;
     }
 
-
-
+    
+    
     @Override
     public void open() throws Exception {
         getLeftOperation().open();
@@ -42,7 +42,7 @@ public abstract class BinaryOperation extends Operation {
         findSourceIndex();
     }
 
-    void findSourceIndex() throws Exception {
+    private void findSourceIndex() throws Exception {
         if (sourceName1 == null) {
             tupleIndex1 = 0;
         } else {
