@@ -13,7 +13,7 @@ import ibd.table.block.Block;
  */
 public abstract class Record extends AbstractRecord {
 
-    public final static Integer RECORD_SIZE = 1024;
+    public final static Integer RECORD_SIZE = 1400;
 
     private final Long primaryKey;
     private String content;

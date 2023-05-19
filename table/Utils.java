@@ -37,6 +37,27 @@ public class Utils {
         table.flushDB();
         return table;
     }
+    
+    static public Table createTable2(String folder, String name, int pageSize, int size, boolean shuffled, int range) throws Exception {
+        Table table = Directory.getTable(folder, name, pageSize, true);
+        //table.initLoad();
+
+        Long[] array1 = new Long[(int) Math.ceil((double) size / range)];
+        for (int i = 0; i < array1.length; i++) {
+            array1[i] = new Long(i * range);
+        }
+
+        if (shuffled) {
+            shuffleArray(array1);
+        }
+
+        for (int i = 0; i < array1.length; i++) {
+            String text = array1[i] + "";
+            table.addRecord(array1[i], text);
+        }
+        table.flushDB();
+        return table;
+    }
 
     public static String pad(String text, int len) {
         if (text.length() > len) {

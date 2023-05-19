@@ -5,7 +5,9 @@
  */
 package ibd.table;
 
-import ibd.table.management.HeapTableBruna;
+import ibd.query.Operation;
+import ibd.query.Tuple;
+import ibd.query.sourceop.TableScan;
 import ibd.table.record.Record;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -63,8 +65,8 @@ public class Main {
     }
 
     private void printMetrics(long time) {
-        System.out.println("records added during reorganization " + Params.RECORDS_ADDED);
-        System.out.println("records removed during reorganization " + Params.RECORDS_REMOVED);
+        //System.out.println("records added during reorganization " + Params.RECORDS_ADDED);
+        //System.out.println("records removed during reorganization " + Params.RECORDS_REMOVED);
         System.out.println("blocks loaded during reorganization " + Params.BLOCKS_LOADED);
         System.out.println("blocks saved during reorganization " + Params.BLOCKS_SAVED);
         System.out.println("time : " + time);
@@ -174,10 +176,107 @@ public class Main {
         printMetrics((end - start));
     }
 
+    public void test1(boolean order) throws Exception {
+        Table table = Directory.getTable("c:\\teste\\ibd", "newTable", 4096, true);
+        testMultipleInsertions(table, 0, 1000, true, false, 400);
+        testMultipleRemotions(table, 0, 1000, order, false);
+        testMultipleInsertions(table, 0, 1500, true, false, 400);
+        testMultipleSearches(table, 0, 1500, true, true);
+    }
+
+    public void test1_(boolean order) throws Exception {
+        try {
+            firstInsert();
+        } catch (Exception e) {
+            System.out.println("ERRO");
+        }
+
+        try {
+            removal(order);
+        } catch (Exception e) {
+            System.out.println("ERRO");
+        }
+
+        try {
+            secondInsert();
+        } catch (Exception e) {
+            System.out.println("ERRO");
+        }
+
+        search();
+    }
+
+    public void firstInsert() throws Exception {
+        Table table = Directory.getTable("c:\\teste\\ibd", "newTable", 4096, true);
+        testMultipleInsertions(table, 0, 1000, true, false, 400);
+    }
+
+    public void removal(boolean order) throws Exception {
+        Table table = Directory.getTable("c:\\teste\\ibd", "newTable", 4096, false);
+        testMultipleRemotions(table, 0, 1000, order, false);
+    }
+
+    public void secondInsert() throws Exception {
+        Table table = Directory.getTable("c:\\teste\\ibd", "newTable", 4096, false);
+        testMultipleInsertions(table, 0, 1500, true, false, 400);
+    }
+
+    public void search() throws Exception {
+        Table table = Directory.getTable("c:\\teste\\ibd", "newTable", 4096, false);
+        testMultipleSearches(table, 0, 1500, true, true);
+    }
+
+    public void test2() throws Exception {
+        Table table = Directory.getTable("c:\\teste\\ibd", "newTable", 4096, true);
+        testMultipleInsertions(table, 0, 1000, true, false, 400);
+        testMultipleRemotions(table, 0, 500, true, false);
+        testMultipleInsertions(table, 0, 500, true, false, 400);
+        testMultipleSearches(table, 0, 1000, true, true);
+    }
+
+    public void test3() throws Exception {
+        Table table = Directory.getTable("c:\\teste\\ibd", "newTable", 4096, true);
+        testMultipleInsertions(table, 0, 1000, true, false, 400);
+        testMultipleRemotions(table, 500, 1000, true, false);
+        testMultipleInsertions(table, 500, 1000, true, false, 400);
+        testMultipleSearches(table, 0, 1000, true, true);
+    }
+
+    public void test4() throws Exception {
+        Table table = Directory.getTable("c:\\teste\\ibd", "newTable", 4096, true);
+        testMultipleInsertions(table, 0, 1000, true, false, 400);
+        testMultipleRemotions(table, 500, 1000, false, false);
+        testMultipleInsertions(table, 500, 1500, true, false, 400);
+        testMultipleSearches(table, 0, 1500, true, true);
+    }
+
     public static void main(String[] args) {
         try {
             Main m = new Main();
-            Table table = Directory.getTable("C:\\Users\\bruna\\IdeaProjects\\ibd", "table.ibd", 4096, true);
+//            Table table = Directory.getTable("c:\\teste\\ibd", "newTable", 4096, true);
+//            m.testMultipleInsertions(table, 0, 1000, true, false, 400);
+//            m.testMultipleRemotions(table, 0, 1000, true, false);
+//            m.testMultipleInsertions(table, 0, 1000, true, false, 400);
+//            m.testMultipleSearches(table, 0, 1000, true, false);
+
+            Table table1 = Utils.createTable("C:\\Users\\bruna\\IdeaProjects\\ibd","t1",4096,100, false, 2);
+            Table table2 = Utils.createTable("C:\\Users\\bruna\\IdeaProjects\\ibd","t2",4096,100, false, 3);
+
+            Operation s1 = new TableScan("t1",table1);
+            Operation s2 = new TableScan("t2",table2);
+
+            Operation diff = new BrunaDifference(s1, s2);
+            Params.BLOCKS_LOADED = 0;
+            diff.open();
+            while (diff.hasNext()){
+                Tuple r = diff.next();
+                System.out.println(r.primaryKey + " - "+r.content);
+            }
+            diff.close();
+            System.out.println("blocks loaded " + Params.BLOCKS_LOADED);
+
+            //m.test1(true);
+            //m.test1_(false);
 
             //m.testInsertion(table,51);
             //m.testInsertion(table,22);
@@ -187,13 +286,8 @@ public class Main {
             //m.testRemoval(table,15);
             //m.testUpdate(table,15L);
             //m.testSearch(table, 15);
-//
 //            
-            m.testMultipleInsertions(table, 0, 1000, true, false, 400);
-            m.testMultipleRemotions(table, 0, 1000, true, false);
-            m.testMultipleInsertions(table, 0, 1000, true, false, 400);
-            m.testMultipleSearches(table, 0, 1000, true, false);
-
+//            
         } catch (Exception ex) {
             ex.printStackTrace();
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
