@@ -7,6 +7,7 @@ package ibd.table;
 
 import ibd.query.Operation;
 import ibd.query.Tuple;
+import ibd.query.binaryop.BrunaDifference;
 import ibd.query.sourceop.TableScan;
 import ibd.table.record.Record;
 import java.util.logging.Level;
@@ -262,18 +263,31 @@ public class Main {
             Table table1 = Utils.createTable("C:\\Users\\bruna\\IdeaProjects\\ibd","t1",4096,100, false, 2);
             Table table2 = Utils.createTable("C:\\Users\\bruna\\IdeaProjects\\ibd","t2",4096,100, false, 3);
 
-            Operation s1 = new TableScan("t1",table1);
-            Operation s2 = new TableScan("t2",table2);
+            Operation scanLeft = new TableScan("t1", table1);
+            Operation scanRight = new TableScan("t2", table2);
 
-            Operation diff = new BrunaDifference(s1, s2);
-            Params.BLOCKS_LOADED = 0;
-            diff.open();
-            while (diff.hasNext()){
-                Tuple r = diff.next();
-                System.out.println(r.primaryKey + " - "+r.content);
+            scanLeft.open();
+            while (scanLeft.hasNext()){
+                Tuple t = scanLeft.next();
+                System.out.println(t);
             }
-            diff.close();
-            System.out.println("blocks loaded " + Params.BLOCKS_LOADED);
+
+            scanRight.open();
+            while (scanRight.hasNext()){
+                Tuple t = scanRight.next();
+                System.out.println(t);
+            }
+//
+//            Operation diff = new BrunaDifference(scanLeft, "t1", scanRight, "t2");
+//            Params.BLOCKS_LOADED = 0;
+//            diff.open();
+//            while (diff.hasNext()){
+//                Tuple r = diff.next();
+////                System.out.println(r.primaryKey + " - "+r.content);
+//                System.out.println(r);
+//            }
+//            diff.close();
+//            System.out.println("blocks loaded " + Params.BLOCKS_LOADED);
 
             //m.test1(true);
             //m.test1_(false);
