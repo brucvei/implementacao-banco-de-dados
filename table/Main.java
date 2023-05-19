@@ -7,6 +7,7 @@ package ibd.table;
 
 import ibd.query.Operation;
 import ibd.query.Tuple;
+import ibd.query.binaryop.BrunaDifference;
 import ibd.query.sourceop.TableScan;
 import ibd.table.record.Record;
 import java.util.logging.Level;

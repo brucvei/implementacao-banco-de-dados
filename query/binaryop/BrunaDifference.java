@@ -1,4 +1,4 @@
-package ibd.table;
+package ibd.query.binaryop;
 
 import ibd.query.Operation;
 import ibd.query.Tuple;
