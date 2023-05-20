@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df1c5dc5-851f-4c8b-95a2-99c05ea92083" name="Changes" comment="">
+    <list default="true" id="df1c5dc5-851f-4c8b-95a2-99c05ea92083" name="Changes" comment="vo me matar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/bruna.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/bruna.idx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/query/binaryop/BrunaDifference.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/query/binaryop/BrunaDifference.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table.ibd.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table.ibd.idx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/table/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table/block/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/table/block/Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ibd/ibd/table/management/HeapTableBruna.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ibd/ibd/table/management/HeapTableBruna.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/query/binaryop/BinaryOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/query/binaryop/BinaryOperation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/query/binaryop/BrunaDifference.java" beforeDir="false" afterPath="$PROJECT_DIR$/query/binaryop/BrunaDifference.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/table/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/table/Main.java" afterDir="false" />
     </list>
@@ -76,7 +65,16 @@
       <workItem from="1684456951335" duration="7000" />
       <workItem from="1684456988329" duration="2505000" />
       <workItem from="1684495311490" duration="8437000" />
+      <workItem from="1684531511217" duration="6439000" />
     </task>
+    <task id="LOCAL-00001" summary="vo me matar">
+      <created>1684520004159</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684520004159</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,5 +90,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="t2" />
+    <MESSAGE value="vo me matar" />
+    <option name="LAST_COMMIT_MESSAGE" value="vo me matar" />
   </component>
 </project>

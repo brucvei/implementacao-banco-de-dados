@@ -266,26 +266,11 @@ public class Main {
             Operation scanLeft = new TableScan("t1", table1);
             Operation scanRight = new TableScan("t2", table2);
 
-//            scanLeft.open();
-//            while (scanLeft.hasNext()){
-//                Tuple t = scanLeft.next();
-//                System.out.println(t);
-//            }
-//
-//            scanRight.open();
-//            while (scanRight.hasNext()){
-//                Tuple t = scanRight.next();
-//                System.out.println(t);
-//            }
-//
             Operation diff = new BrunaDifference(scanLeft, "t1", scanRight, "t2");
             Params.BLOCKS_LOADED = 0;
             diff.open();
-            System.out.println("------------------");
-            System.out.println("DIFFERENCE");
             while (diff.hasNext()){
                 Tuple r = diff.next();
-//                System.out.println(r.primaryKey + " - "+r.content);
                 System.out.println("- " + r);
             }
             diff.close();

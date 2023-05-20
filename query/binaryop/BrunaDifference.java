@@ -1,12 +1,7 @@
 package ibd.query.binaryop;
 
 import ibd.query.Operation;
-import ibd.query.SourceTuple;
 import ibd.query.Tuple;
-import ibd.query.binaryop.BinaryOperation;
-import ibd.query.sourceop.PKFilterScan;
-
-import static ibd.table.Utils.match;
 
 public class BrunaDifference extends BinaryOperation {
 
@@ -15,16 +10,17 @@ public class BrunaDifference extends BinaryOperation {
 
     public BrunaDifference(Operation op1, Operation op2) throws Exception {
         super(op1, op2);
+        tupleIndex1 = -1;
     }
 
     public BrunaDifference(Operation op1, String sourceName1, Operation op2, String sourceName2) throws Exception {
         super(op1, sourceName1, op2, sourceName2);
+        this.tupleIndex1 = -1;
+        this.tupleIndex2 = -1;
     }
 
     @Override
     public void open() throws Exception {
-
-        System.out.println("OPEN");
         getLeftOperation().open();
         System.out.println(getLeftSourceName());
         getRigthOperation().open();
@@ -36,31 +32,17 @@ public class BrunaDifference extends BinaryOperation {
 
     @Override
     public Tuple next() throws Exception {
-        System.out.println("NEXT");
-
         if (nextTuple != null) {
             Tuple next_ = nextTuple;
             nextTuple = null;
             return next_;
         }
 
-        while (op1.hasNext()) {
-            Tuple tp = op1.next();
-            findSourceIndex();
-            if (!isPresent()) {
-                Tuple rec = new Tuple();
-                rec.addSource(tp);
-//                    rec.primaryKey = tp.primaryKey;
-                //rec.content = tp.content;
-                return rec;
-            }
-        }
-        throw new Exception("No more data");
+        return join();
     }
 
     @Override
     public boolean hasNext() throws Exception {
-        System.out.println("HASNEXT");
         if (nextTuple != null) {
             return true;
         }
@@ -69,21 +51,17 @@ public class BrunaDifference extends BinaryOperation {
     }
 
     public boolean isPresent() throws Exception {
-        System.out.println(getLeftSourceName() + " - index " + tupleIndex1);
-        System.out.println(getRigthSourceName() + " - index " + tupleIndex2);
-
+        boolean flag = false;
         while (op2.hasNext()) {
-            op2.next();
-            findSourceIndex();
-            if (match((long) tupleIndex1, (long) tupleIndex2, 0)) {
-                return true;
+            Tuple curTuple2 = (Tuple) op2.next();
+            if (curTuple1.sourceTuples[tupleIndex1].record.getPrimaryKey().equals(curTuple2.sourceTuples[tupleIndex2].record.getPrimaryKey())) {
+                flag = true;
             }
         }
-        return false;
+        return flag;
     }
 
     private Tuple join() throws Exception {
-
         while (curTuple1 != null || op1.hasNext()) {
             if (curTuple1 == null) {
                 curTuple1 = op1.next();
@@ -91,12 +69,11 @@ public class BrunaDifference extends BinaryOperation {
             }
             while (op2.hasNext()) {
                 Tuple curTuple2 = (Tuple) op2.next();
-                if (Long.compare(curTuple1.sourceTuples[tupleIndex1].record.getPrimaryKey(), curTuple2.sourceTuples[tupleIndex2].record.getPrimaryKey()) == 0) {
+                if (!isPresent()) {
                     Tuple tuple = new Tuple();
-                    tuple.addSources(curTuple1, curTuple2);
+                    tuple.addSource(curTuple1);
                     return tuple;
                 }
-
             }
             curTuple1 = null;
         }
